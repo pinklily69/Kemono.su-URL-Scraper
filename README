@@ -13,21 +13,75 @@ Simple, secure, and reliable scraper to track stolen content from Kemono.su dail
 
 ## 🛠️ Installation & Setup
 
-**Step 1: Python Installation**
+### Step 1: Python Installation
 
 - Download and install [Python](https://www.python.org/downloads/) (3.8 or higher).
-- Select "**Add Python to PATH**" during installation.
+- Ensure you select **"Add Python to PATH"** during installation.
 
-**Step 2: Install Dependencies**
+### Step 2: Install Dependencies
 
-Run the provided script:
+Run the provided script (`install_dependencies.bat`) by double-clicking it:
 
+```
+install_dependencies.bat
+```
 
-**Step 3: Configuration**
+### Step 3: Configuration
 
 Edit the `config.ini` file:
 
 ```ini
 [Kemono]
 base_url = https://kemono.su/patreon/user/your_user_id_here
-max_pages = 20000000
+max_pages = 200
+```
+
+Replace `your_user_id_here` with your Kemono ID.
+
+---
+
+## ⚙️ Automate Daily Scraping (Task Scheduler)
+
+Automate the scraper to run every day automatically:
+
+1. **Create a batch file** named `run_daily_scraper.bat` in the same folder:
+
+```batch
+@echo off
+cd /d "%~dp0"
+py kemono_scrapper.py
+```
+
+2. **Setup Task Scheduler**:
+
+- Press `Win + R`, type `taskschd.msc`, and hit Enter.
+- Select **"Create Basic Task"** and give it a clear name (e.g., "Kemono Daily Scraper").
+- Choose **"Daily"** trigger and set your desired run time (e.g., `9:00 AM`).
+- Select **"Start a program"** as the action.
+- Browse and select the batch file (`run_daily_scraper.bat`).
+- Check the option **"Open the Properties dialog"** after creation.
+- In the task properties window, under the **"Settings"** tab, check:
+  - ☑ **"Run task as soon as possible after a scheduled start is missed"**.
+- Click **OK**.
+
+Now your scraper runs automatically every day, even if your PC was off at the scheduled time.
+
+---
+
+## 📌 Manual Usage (Testing)
+
+You can also manually run it (useful for initial tests):
+
+```bash
+python kemono_scrapper.py
+```
+
+---
+
+## 📄 License
+
+Use freely, provided no support or assistance is given to piracy websites.
+
+```
+MIT License
+```
