@@ -11,8 +11,7 @@ out/
 __pycache__/
 *.pyc
 *.pyo
-*.pyd
-*.c  # Critical: Hide generated Cython C file
+*.c  # CRITICAL: Exclude Cython-generated C files (keep hidden)
 build/
 dist/
 *.egg-info/
