@@ -1,0 +1,23 @@
+# JetBrains Rider and PyCharm
+.idea/
+*.iml
+*.ipr
+*.iws
+*.bak
+out/
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.c  # Critical: Hide generated Cython C file
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# OS files
+.DS_Store
+Thumbs.db

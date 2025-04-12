@@ -1,0 +1,33 @@
+# Kemono.su Scraper
+
+Simple, secure, and reliable scraper to track stolen content from Kemono.su daily. Compiled into a secure DLL to protect the scraping logic from piracy countermeasures.
+
+## 🚀 Features
+
+- Daily automated checks for stolen content.
+- Automatic alerts and logging of newly stolen URLs.
+- Secure DLL encapsulation to protect scraping methods.
+- Easy user configuration via a simple `.ini` file.
+
+---
+
+## 🛠️ Installation & Setup
+
+**Step 1: Python Installation**
+
+- Download and install [Python](https://www.python.org/downloads/) (3.8 or higher).
+- Select "**Add Python to PATH**" during installation.
+
+**Step 2: Install Dependencies**
+
+Run the provided script:
+
+
+**Step 3: Configuration**
+
+Edit the `config.ini` file:
+
+```ini
+[Kemono]
+base_url = https://kemono.su/patreon/user/your_user_id_here
+max_pages = 20000000
